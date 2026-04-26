@@ -1,6 +1,6 @@
 # Centawin
 
-`Centawin` is a super simple and lightweight Windows utility that does only one thing: **center the focused window** via hotkey. It works great with **multi-monitor configurations**. The program has **no graphical interface** and doesn't create a tray icon.
+`Centawin` is a super simple, lightweight, and portable Windows utility that does only one thing: **centers the focused window** via the hotkey. It works great with **multi-monitor configurations**. The program has **no graphical interface** and doesn't create a tray icon.
 
 ## How to Use
 
