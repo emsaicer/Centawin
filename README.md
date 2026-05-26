@@ -12,6 +12,9 @@
 
 You need to edit the `config.ini` file. It is **created after the first launch** of the program. It is also **included in the zip archive**.
 
+> [!NOTE]
+> If you launched `Centawin` **before** changing the keybinding, you need to **stop the program and run it again** for the changes to take effect.
+
 ## How to Center a Window with Administrative Privileges
 
 You need to run `Centawin` with **administrative privileges**.
