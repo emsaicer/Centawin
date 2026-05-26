@@ -1,4 +1,4 @@
-# Centawin
+# <img src="centawin.ico" width="45" height="45" align="top" alt="Centawin Icon"> Centawin
 
 `Centawin` is a super simple, lightweight, and portable Windows utility that does only one thing: **centers the focused window** via the hotkey. It works great with **multi-monitor configurations**. The program has **no graphical interface** and doesn't create a tray icon. You can change a default hotkey.
 
