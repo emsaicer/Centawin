@@ -1,12 +1,16 @@
 # Centawin
 
-`Centawin` is a super simple, lightweight, and portable Windows utility that does only one thing: **centers the focused window** via the hotkey. It works great with **multi-monitor configurations**. The program has **no graphical interface** and doesn't create a tray icon.
+`Centawin` is a super simple, lightweight, and portable Windows utility that does only one thing: **centers the focused window** via the hotkey. It works great with **multi-monitor configurations**. The program has **no graphical interface** and doesn't create a tray icon. You can change a default hotkey.
 
 ## How to Use
 
 1. Run `centawin.exe`.
 2. Focus a window.
-3. Press `Win` + `Shift` + `Q` keybinding.
+3. Press the `Win` + `Shift` + `Q` keybinding (or one you set).
+
+## How to Change a Keybinding
+
+You need to edit the `config.ini` file. It is **created after the first launch** of the program. It is also **included in the zip archive**.
 
 ## How to Center a Window with Administrative Privileges
 
@@ -73,5 +77,9 @@ If you want to do it **manually**, delete a shortcut to `centawin.exe` from the 
 ## How to Build
 
 ```
-gcc main.c -o centawin.exe -mwindows -s
+windres resources.rc -o resources.o && gcc main.c resources.o -o centawin.exe -mwindows -s && del resources.o
 ```
+
+OR
+
+Run `build.bat`.
