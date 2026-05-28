@@ -16,7 +16,7 @@ BEGIN
         BLOCK "040904b0"
         BEGIN
             VALUE "CompanyName",      "emsaicer"
-            VALUE "FileDescription",  "Tiny portable Windows utility that centers an active window via a hotkey."
+            VALUE "FileDescription",  "Centawin"
             VALUE "FileVersion",      "1.1.0"
             VALUE "InternalName",     "centawin"
             VALUE "LegalCopyright",   "Copyright (C) 2026"
