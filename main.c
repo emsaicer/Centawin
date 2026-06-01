@@ -2,6 +2,15 @@
 #include <windows.h>
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
+	const char *mutex_name = "Local\\CentawinAppUniqueMutexName";
+	HANDLE mutex_handle = CreateMutexA(NULL, TRUE, mutex_name);
+
+	if (mutex_handle == NULL || GetLastError() == ERROR_ALREADY_EXISTS) {
+		MessageBoxA(NULL, "Centawin is already running.", "Centawin Error", MB_OK | MB_ICONWARNING);
+		if (mutex_handle) CloseHandle(mutex_handle);
+		return 1;
+	}
+
 	const char *default_key = "Q";
 	const int is_ctrl_modifier = 0;
 	const int is_shift_modifier = 1;
@@ -104,7 +113,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			}
 		}
 	}
+
 	UnregisterHotKey(NULL, HOTKEY_ID);
+	ReleaseMutex(mutex_handle);
+	CloseHandle(mutex_handle);
 
 	return 0;
 }
