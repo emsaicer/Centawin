@@ -14,7 +14,7 @@
 
 You need to run `Centawin` with **administrative privileges**.
 
-## No-Tray Icon Version
+## Version without Tray Icon
 
 If you don't want to see a tray icon, use [Centawin v1.1.1](https://github.com/emsaicer/Centawin/releases/tag/v1.1.1).
 
