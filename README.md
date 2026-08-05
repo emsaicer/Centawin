@@ -8,7 +8,7 @@
 
 1. Run `centawin.exe`.
 2. Focus a window.
-3. Press the `Win` + `Shift` + `Q` keybinding (or one you have set).
+3. Press the `Win` **+** `Shift` **+** `Q` keybinding (or your custom one).
 
 ## How to Center a Window with Administrative Privileges
 
