@@ -24,6 +24,6 @@ Run **`build.bat`**.
 
 OR
 
-```
+```bash
 windres resources.rc -o resources.o && clang main.c -lole32 -luuid "-Wl,--gc-sections" -mwindows -s -Os resources.o -o centawin.exe && del resources.o
 ```
