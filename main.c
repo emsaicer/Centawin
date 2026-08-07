@@ -129,12 +129,19 @@ BOOL is_autostart_enabled() {
 
 void enable_autostart_admin() {
 	char exe_path[MAX_PATH];
-	char command[MAX_PATH * 2];
+	char command[MAX_PATH * 4];
 	STARTUPINFOA startup_info = {sizeof(STARTUPINFOA)};
 	PROCESS_INFORMATION process_information;
 
 	GetModuleFileNameA(NULL, exe_path, MAX_PATH);
-	snprintf(command, sizeof(command), "schtasks /Create /TN \"Centawin Autostart\" /TR \"\\\"%s\\\"\" /SC ONLOGON /RL HIGHEST /F", exe_path);
+	snprintf(command, sizeof(command),
+		"cmd.exe /c \"schtasks /Create /TN \"Centawin Autostart\" /TR \"\\\"%s\\\"\" /SC ONLOGON /RL HIGHEST /F && "
+		"powershell -Command \"\"$task = Get-ScheduledTask -TaskName 'Centawin Autostart'; "
+		"$task.Settings.ExecutionTimeLimit = 'PT0S'; "
+		"$task.Settings.DisallowStartIfOnBatteries = $false; "
+		"Set-ScheduledTask $task\"\"\"",
+		exe_path);
+
 	startup_info.dwFlags = STARTF_USESHOWWINDOW;
 	startup_info.wShowWindow = SW_HIDE;
 
